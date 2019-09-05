@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<!--动态加载方法  -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"></constant>
+	<!--设置当struts.xml文件改动时，是否重新加载  -->
+	<constant name="struts.configuration.xml.reload" value="true"></constant>
+	<!-- # struts.objectFactory = spring 将action创建交给spring容器-->
+	<!-- struts.objectFactory.spring.autoWire = name 自动装配Action依赖-->
+	<constant name="struts.objectFactory" value="spring"></constant>
+ 	
+ 	<package name="integration" namespace="/" extends="struts-default">
+ 
+	</package>
+</struts>

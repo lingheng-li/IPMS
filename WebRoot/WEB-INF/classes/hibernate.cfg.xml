@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<property name="dialect">
+			org.hibernate.dialect.MySQLDialect
+		</property>
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/ssh_test
+		</property>
+		<property name="connection.username">root</property>
+		<property name="connection.password">root</property>
+		<property name="connection.driver_class">
+			com.mysql.jdbc.Driver
+		</property>
+		<property name="myeclipse.connection.profile">test</property>
+		<!-- 在控制台输出持久化SQL文 -->
+		<property name="show_sql">true</property>
+		<!-- 将hibernate生产的sql语句格式化(缩进) -->
+		<property name="hibernate_format_sql">true</property>
+
+		<!-- 注意:因为spring中也相应hibernate的封装技术。所以务必删除一下学习的两个常量 -->
+		<!--
+ 		<property name="hibernate.current_session_context_class">
+			thread
+		</property>
+		<property name="hibernate.connection.isolation">4</property>
+		-->
+	</session-factory>
+
+</hibernate-configuration>

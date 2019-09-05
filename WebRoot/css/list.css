@@ -1,0 +1,18 @@
+
+	body{ margin:5px; font-size:20px}
+	#top{ width:973px; height:27px; margin:0px; padding:0px; border:0px ; text-align:left}
+	#topleft{ width:10px; height:27px;background-image:url(images/tleft.gif); margin:0px; float:left}
+	#topcenter{ width:953px; height:27px;background-image:url(images/tbg.gif);margin:0px; float:left}
+	#topright{ width:10px; height:27px;background-image:url(images/tright.gif); float:left}
+	#topcenterleft{margin:6px 0px 0px 5px; float:left}
+	#topcentercenter{ width:500px; margin:3px 0px 0px 160px; float:left}
+	#topcenterright{margin:3px 0px 0px 30px; float:left}
+	#table{ margin:0px;}
+	.tong{ font-size:12px}
+	#bortop1{border-top:1px; border-right:0px; border-bottom:1px; border-left:1px; border-color:#5AC9FE; border-style:solid;background-color:#A6E0FF;}
+	#bortop2{border-top:1px; border-right:1px; border-bottom:1px; border-left:1px; border-color:#5AC9FE;border-style:solid; background-color:#A6E0FF}
+	#bor1{border-top:0px; border-right:0px; border-bottom:1px; border-left:1px; border-style:solid; border-color:#5AC9FE}
+	#bor2{border-top:0px; border-right:1px; border-bottom:1px; border-left:1px; border-style:solid; border-color:#5AC9FE}/*E8F7FF œ‚«∂—’…´÷µ*/
+	.liTi{margin:0px ; border-right:1px; border-left:1px solid #FFFFFF; border-top:1px solid #FFFFFF; border-bottom:1px ; height:100%; width:100%; text-align:center}
+	.neiDiv{margin-top:4px}
+	a{ text-decoration: none;}
