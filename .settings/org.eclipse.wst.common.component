@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
-    <wb-module deploy-name="SSH_Integration">
+    <wb-module deploy-name="IPMS">
         <wb-resource deploy-path="/" source-path="/WebRoot" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="SSH_Integration"/>
         <property name="java-output-path" value="/SSH_Integration/WebRoot/WEB-INF/classes"/>
+        <property name="context-root" value="/IPMS"/>
     </wb-module>
 </project-modules>
