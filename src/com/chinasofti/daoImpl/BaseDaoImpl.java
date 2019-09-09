@@ -11,7 +11,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import com.chinasofti.dao.BaseDao;
 
 public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
-	private Class clazz;//用于接收运行时期泛型类型
+	private Class clazz;
 	
 	public Class getClazz() {
 		return clazz;
@@ -20,9 +20,7 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
 		this.clazz = clazz;
 	}
 	public BaseDaoImpl(){
-		//获得当前类型带有泛型类型父类
 		ParameterizedType ptClass = (ParameterizedType)this.getClass().getGenericSuperclass();
-		//获得运行时期的泛型类型
 		clazz = (Class)ptClass.getActualTypeArguments()[0];
 	}
 	@Override
@@ -37,7 +35,6 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
 
 	@Override
 	public void delete(Serializable id) {
-	//先取再删
 	T t = this.getByID(id);
 	getHibernateTemplate().delete(t);
 	}
@@ -54,12 +51,10 @@ public class BaseDaoImpl<T> extends HibernateDaoSupport implements BaseDao<T>{
 
 	@Override
 	public Integer getTotalCount(DetachedCriteria dc) {
-		//设置查询的聚合函数，总记录数
 		dc.setProjection(Projections.rowCount());
 		
 		List<Long> list = (List<Long>)getHibernateTemplate().findByCriteria(dc);
 		
-		//清空之前设置的聚合函数调价你
 		dc.setProjection(null);
 		if(list!=null &&list.size()>0){
 			Long count = list.get(0);

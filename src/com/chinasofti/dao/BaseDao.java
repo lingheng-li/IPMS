@@ -6,20 +6,13 @@ import java.util.List;
 import org.hibernate.criterion.DetachedCriteria;
 
 public interface BaseDao<T> {
-	//Ôö»ò¸Ä£¨ÓĞÖ÷¼üµÄÊ±ºò×öĞŞ¸Ä£¬Ã»ÓĞÖ÷¼ü µ½Ê±ºòĞÂÔö£©
+	//å¢æˆ–åˆ 
 	void saveOrUpdate(T t);
-	//Ôö
 	void save(T t);
-	//É¾
 	void delete(T t);
-	//É¾
 	void delete(Serializable id);
-	//¸Ä
 	void update(T t);
-	//²é ¸ù¾İID²é
 	T getByID(Serializable id);
-	//²é ²éÑ¯×Ü¼ÇÂ¼Êı
 	Integer getTotalCount(DetachedCriteria dc);
-	//²é  ·ÖÒ³²éÑ¯ÁĞ±í
 	List<T> getPageList(DetachedCriteria dc,Integer start,Integer pageSize);
 }

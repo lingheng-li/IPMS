@@ -1,3 +1,8 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,19 +23,19 @@
 			<div class="layui-form-item">
 			    <label class="layui-form-label">用户名</label>
 			    <div class="layui-input-block">
-			    	<input type="text" value="请叫我马哥" disabled class="layui-input layui-disabled">
+			    	<input type="text" value="${user.username}" disabled class="layui-input layui-disabled">
 			    </div>
 			</div>
 			<div class="layui-form-item">
-			    <label class="layui-form-label">用户组</label>
+			    <label class="layui-form-label">用户权限</label>
 			    <div class="layui-input-block">
-			    	<input type="text" value="超级管理员" disabled class="layui-input layui-disabled">
+			    	<input type="text" value="${user.access}" disabled class="layui-input layui-disabled">
 			    </div>
 			</div>
 			<div class="layui-form-item">
 			    <label class="layui-form-label">真实姓名</label>
 			    <div class="layui-input-block">
-			    	<input type="text" value="" placeholder="请输入真实姓名" lay-verify="required" class="layui-input realName">
+			    	<input type="text" value="${user.truename}" placeholder="请输入真实姓名" lay-verify="required" class="layui-input realName">
 			    </div>
 			</div>
 			<div class="layui-form-item" pane="">

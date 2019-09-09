@@ -5,10 +5,10 @@
 	<context:property-placeholder location="classpath:db.properties"/>
 	<!-- 配置c3p0连接池 -->
 	<bean name="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-		<property name="driverClass" value="${jdbc1.driverClass}"></property>
-		<property name="jdbcUrl" value="${jdbc1.jdbcUrl}"></property>
-		<property name="user" value="${jdbc1.user}"></property>
-		<property name="password" value="${jdbc1.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
 	</bean>
 	<!-- 将sessionFactory配置到spring容器中 -->
 	<!-- 配置方案1:任然使用外部的 hibernate.cfg.xml配置信息(不推荐)-->
@@ -39,12 +39,18 @@
 	</bean>
 		
 	<!-- 注意:Action对象作用范围一定是多例的 -->
-	
+	<bean name="userAction" class="com.chinasofti.action.UserAction">
+		<property name="loginService" ref="loginService"></property>
+	</bean>
 	<!-- service -->
-
+	<bean name="loginService" class="com.chinasofti.serviceImpl.LoginServiceImpl">
+		<property name="loginDao" ref="loginDao"></property>
+	</bean>
 	
 	<!-- dao -->
-
+	<bean name="loginDao" class="com.chinasofti.daoImpl.LoginDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
 
 	<!-- 核心事务管理器 -->
 	<bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">

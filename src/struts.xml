@@ -9,7 +9,14 @@
 	<!-- struts.objectFactory.spring.autoWire = name 自动装配Action依赖-->
 	<constant name="struts.objectFactory" value="spring"></constant>
  	
- 	<package name="integration" namespace="/" extends="struts-default">
- 
+ 	<package name="IMPS" namespace="/" extends="struts-default">
+ 		 <!-- 当逻辑抛出RuntimeException类型的异常时，自动重定向结果集为error的页面-->
+		<global-exception-mappings>
+			<exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
+		</global-exception-mappings>
+ 		<action name="UserAction_*" class="userAction" method="{1}">
+ 			<result name="login" type="redirect">/index.jsp</result>
+ 			<result name="error">/page/login/login.html</result>
+ 		</action>
 	</package>
 </struts>
