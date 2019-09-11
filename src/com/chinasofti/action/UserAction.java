@@ -48,4 +48,9 @@ public class UserAction extends ActionSupport{
 		resp.getWriter().write(JSONObject.fromObject(user).toString());
 	}
 
+	public String logout(){
+		HttpServletRequest req = ServletActionContext.getRequest();
+		req.getSession().removeAttribute("user");
+		return "login";
+	}
 }

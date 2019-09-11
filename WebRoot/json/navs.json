@@ -11,21 +11,16 @@
 },{
 	"title" : "用户管理",
 	"icon" : "&#xe613;",
-	"href" : "",
+	"href" : "page/user/allUsers.html",
 	"spread" : false
 },{
 	"title" : "入口管理",
-	"icon" : "icon-text",
-	"href" : "",
-	"spread" : false
-},{
-	"title" : "出口管理",
-	"icon" : "icon-text",
-	"href" : "",
+	"icon" : "&#xe628;",
+	"href" : "page/car/carin.jsp",
 	"spread" : false
 },{
 	"title" : "费率设置",
-	"icon" : "icon-text",
+	"icon" : "&#xe659;",
 	"href" : "",
 	"spread" : false
 },{
@@ -35,7 +30,7 @@
 	"spread" : false
 },{
 	"title" : "停车记录",
-	"icon" : "icon-text",
+	"icon" : "&#xe60e;",
 	"href" : "",
 	"spread" : false
 },{
@@ -68,7 +63,7 @@
 		{
 			"title" : "登录",
 			"icon" : "&#xe609;",
-			"href" : "page/login/login.jsp",
+			"href" : "UserAction_logout",
 			"spread" : false,
 			"target" : "_blank"
 		}

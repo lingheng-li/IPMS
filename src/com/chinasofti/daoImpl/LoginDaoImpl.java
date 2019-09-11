@@ -9,7 +9,7 @@ import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 import com.chinasofti.dao.LoginDao;
 import com.chinasofti.entity.TUser;
 
-public class LoginDaoImpl extends HibernateDaoSupport implements LoginDao{
+public class LoginDaoImpl extends BaseDaoImpl<TUser> implements LoginDao{
 
 	@Override
 	public TUser findUser(String name, String pwd) {

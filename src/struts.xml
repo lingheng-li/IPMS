@@ -15,8 +15,13 @@
 			<exception-mapping result="error" exception="java.lang.RuntimeException"></exception-mapping>
 		</global-exception-mappings>
  		<action name="UserAction_*" class="userAction" method="{1}">
- 			<result name="login" type="redirect">/index.jsp</result>
- 			<result name="error">/page/login/login.html</result>
+ 			<result name="login" type="redirect">/login.jsp</result>
+ 			<result name="error">/login.jsp</result>
+ 		</action>
+ 		<action name="RecordAction_*" class="recordAction" method="{1}">
+ 			<result name="error">/login.jsp</result>
+ 			<result name="carOut">/page/car/carout.jsp</result>
+ 			<result name="car" type="redirect">/page/car/carin.jsp</result>
  		</action>
 	</package>
 </struts>

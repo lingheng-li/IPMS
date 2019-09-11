@@ -42,8 +42,16 @@
 	<bean name="userAction" class="com.chinasofti.action.UserAction">
 		<property name="loginService" ref="loginService"></property>
 	</bean>
+	<bean name="recordAction" class="com.chinasofti.action.RecordAction">
+		<property name="recordService" ref="recordService"></property>
+	</bean>	
+	
 	<!-- service -->
 	<bean name="loginService" class="com.chinasofti.serviceImpl.LoginServiceImpl">
+		<property name="loginDao" ref="loginDao"></property>
+	</bean>
+	<bean name="recordService" class="com.chinasofti.serviceImpl.RecordServiceImpl">
+		<property name="recordDao" ref="recordDao"></property>
 		<property name="loginDao" ref="loginDao"></property>
 	</bean>
 	
@@ -51,6 +59,10 @@
 	<bean name="loginDao" class="com.chinasofti.daoImpl.LoginDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
+	<bean name="recordDao" class="com.chinasofti.daoImpl.RecordDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
 
 	<!-- 核心事务管理器 -->
 	<bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">

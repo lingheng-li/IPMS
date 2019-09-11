@@ -10,8 +10,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>IPMS</title>
-		<link rel="stylesheet" type="text/css" href="../../layui/css/layui.css" />
-		<link rel="stylesheet" type="text/css" href="../../css/login.css" />
+		<link rel="stylesheet" type="text/css" href="layui/css/layui.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
 	</head>
 
 	<body>
@@ -24,14 +24,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<input type="text" id="name" required lay-verify="required" name="tUser.username" placeholder="用户名" autocomplete="off" class="layui-input">
 						</div>
 						<div class="layui-form-item">
-							<input type="text" id="pwd" required lay-verify="required" name="tUser.password" placeholder="密码" autocomplete="off" class="layui-input">
+							<input type="password" id="pwd" required lay-verify="required" name="tUser.password" placeholder="密码" autocomplete="off" class="layui-input">
 						</div>
 						<div class="layui-form-item">
 							<div class="layui-inline">
 								<input type="text" name="verity" required lay-verify="required" placeholder="验证码" autocomplete="off" class="layui-input">
 							</div>
 							<div class="layui-inline">
-								<img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="../../images/login/yzm.jpg" />
+								<img class="verifyImg" onclick="this.src=this.src+'?c='+Math.random();" src="images/login/yzm.jpg" />
 							</div>
 						</div>
 						<div class="layui-form-item m-login-btn">
@@ -47,8 +47,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				<p class="copyright">Copyright 2019 by LI</p>
 			</div>
 		</div>
- 		<script src="../../layui/layui.js" type="text/javascript" charset="utf-8"></script>
- 		<script type="text/javascript" src="../../js/jquery-3.4.1.min.js"></script>
+ 		<script src="layui/layui.js" type="text/javascript" charset="utf-8"></script>
+ 		<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
 		<script>
  			layui.use(['form'], function() {
 				var form = layui.form(),
@@ -70,16 +70,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				form.on('submit(login)', function() {
 					/* $("#loginFrom").submit(); */
  					$.post({
-						url:"../../UserAction_login",
+						url:"UserAction_login",
 						data:{name:$("#name").val(),pwd:$("#pwd").val()},
 /* 						dataType:"json", */
 						success:function (data){
 							var obj=data;
 							var access = obj["access"];
 							if(access==1){
-								window.location.href="../../index.jsp";
+								window.location.href="index.jsp";
 							}else if (access==0) {
-								window.location.href="../../index.jsp";
+								window.location.href="index.jsp";
 							}else{
 								window.location.href="login.jsp";
 							}
