@@ -10,6 +10,9 @@ layui.config({
 	var carData = '';
 	$.get("../../RecordAction_CarInList", function(data){
 		carData = data;
+		if(carData==null){
+			window.location.href="../../UserAction_logout";
+		}
 		if(window.sessionStorage.getItem("addUser")){
 			var addUser = window.sessionStorage.getItem("addUser");
 			carData = JSON.parse(addUser).concat(carData);

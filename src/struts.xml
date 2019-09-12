@@ -16,12 +16,34 @@
 		</global-exception-mappings>
  		<action name="UserAction_*" class="userAction" method="{1}">
  			<result name="login" type="redirect">/login.jsp</result>
- 			<result name="error">/login.jsp</result>
+ 			<result name="error" type="redirect">/login.jsp</result>
+ 			<result name="list">/page/account/accont.jsp</result>
+ 			<result name="editList">/page/account/addAcount.jsp</result>
+ 			<result name="tolist" type="redirectAction">
+ 				<param name="namespace">/</param>
+ 				<param name="actionName">UserAction_list</param>
+ 			</result>
  		</action>
  		<action name="RecordAction_*" class="recordAction" method="{1}">
- 			<result name="error">/login.jsp</result>
+ 			<result name="error" >/page/404.html</result>
  			<result name="carOut">/page/car/carout.jsp</result>
  			<result name="car" type="redirect">/page/car/carin.jsp</result>
+ 			<result name="list" >/page/AdmiQuery/AdmiQuery.jsp</result>
+ 		</action>
+ 	 	<action name="RbbAction_*" class="RbbAction" method="{1}">
+ 			<result name="listTicket">/page/money/ribaobiao.jsp</result>
+ 		</action>
+ 		 <action name="FeilvAction_*" class="FeilvAction" method="{1}">
+ 			<result name="list">/page/sys/feilvlist.jsp</result>
+ 			<result name="editlist">/page/sys/feilv.jsp</result>
+ 		</action>
+ 		<action name="monthticketAction_*" class="monthticketAction" method="{1}">
+ 			<result name="listTicket">/page/monticket/mtms.jsp</result>
+ 			<result name="toaddlist">/page/monticket/addmtms.jsp</result>
+ 			<result name="tolist" type="redirectAction">
+ 				<param name="namespace">/</param>
+ 				<param name="actionName">monthticketAction_listTicket</param>
+ 			</result>
  		</action>
 	</package>
 </struts>

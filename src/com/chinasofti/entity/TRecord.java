@@ -17,7 +17,7 @@ public class TRecord implements java.io.Serializable {
 	private Integer isover;
 	private Timestamp leavetime;
 	private String type;
-	private Long monthId;
+	private TCar monthId;
 	private TUser userId;
 
 	// Constructors
@@ -28,7 +28,7 @@ public class TRecord implements java.io.Serializable {
 
 	/** full constructor */
 	public TRecord(String carId, Timestamp entertime, String fee,
-			Integer isover, Timestamp leavetime, String type, Long monthId,
+			Integer isover, Timestamp leavetime, String type, TCar monthId,
 			TUser userId) {
 		this.carId = carId;
 		this.entertime = entertime;
@@ -98,11 +98,11 @@ public class TRecord implements java.io.Serializable {
 		this.type = type;
 	}
 
-	public Long getMonthId() {
+	public TCar getMonthId() {
 		return this.monthId;
 	}
 
-	public void setMonthId(Long monthId) {
+	public void setMonthId(TCar monthId) {
 		this.monthId = monthId;
 	}
 
@@ -112,14 +112,6 @@ public class TRecord implements java.io.Serializable {
 
 	public void setUserId(TUser userId) {
 		this.userId = userId;
-	}
-
-	@Override
-	public String toString() {
-		return "TRecord [id=" + id + ", carId=" + carId + ", entertime="
-				+ entertime + ", fee=" + fee + ", isover=" + isover
-				+ ", leavetime=" + leavetime + ", type=" + type + ", monthId="
-				+ monthId + ", userId=" + userId + "]";
 	}
 
 }

@@ -39,13 +39,24 @@
 	</bean>
 		
 	<!-- 注意:Action对象作用范围一定是多例的 -->
-	<bean name="userAction" class="com.chinasofti.action.UserAction">
+	<bean name="userAction" class="com.chinasofti.action.UserAction" scope="prototype">
 		<property name="loginService" ref="loginService"></property>
+		<property name="us" ref="userService"></property>
 	</bean>
-	<bean name="recordAction" class="com.chinasofti.action.RecordAction">
+	<bean name="recordAction" class="com.chinasofti.action.RecordAction" scope="prototype">
 		<property name="recordService" ref="recordService"></property>
+		<property name="fs" ref="FeilvService"></property>
 	</bean>	
-	
+	<bean name="RbbAction" class="com.chinasofti.action.RbbAction" scope="prototype">
+		<property name="rs" ref="RibaobiaoService"></property>
+	</bean>
+	<bean name="FeilvAction" class="com.chinasofti.action.FeilvAction" scope="prototype">
+		<property name="fs" ref="FeilvService"></property>
+	</bean>
+	<bean name="monthticketAction" class="com.chinasofti.action.MonthTicketAction" scope="prototype">
+		<property name="ms" ref="monthTicketService"></property>
+	</bean>
+
 	<!-- service -->
 	<bean name="loginService" class="com.chinasofti.serviceImpl.LoginServiceImpl">
 		<property name="loginDao" ref="loginDao"></property>
@@ -53,8 +64,21 @@
 	<bean name="recordService" class="com.chinasofti.serviceImpl.RecordServiceImpl">
 		<property name="recordDao" ref="recordDao"></property>
 		<property name="loginDao" ref="loginDao"></property>
+		<property name="fd" ref="FeilvDao"></property>
+		<property name="rd" ref="ribaobiaoDao"></property>
 	</bean>
-	
+	<bean name="RibaobiaoService" class="com.chinasofti.serviceImpl.RibaobiaoServiceImpl">
+		<property name="rd" ref="ribaobiaoDao"></property>
+	</bean>
+	<bean name="FeilvService" class="com.chinasofti.serviceImpl.FeilvServiceImpl">
+		<property name="fd" ref="FeilvDao"></property>
+	</bean>
+	<bean name="monthTicketService" class="com.chinasofti.serviceImpl.MonthTicketServiceImpl">
+		<property name="md" ref="monthTicketDao"></property>
+	</bean>	
+	<bean name="userService" class="com.chinasofti.serviceImpl.UserServiceImpl">
+		<property name="ud" ref="userDao"></property>
+	</bean>	
 	<!-- dao -->
 	<bean name="loginDao" class="com.chinasofti.daoImpl.LoginDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
@@ -62,8 +86,18 @@
 	<bean name="recordDao" class="com.chinasofti.daoImpl.RecordDaoImpl">
 		<property name="sessionFactory" ref="sessionFactory"></property>
 	</bean>
-
-
+	<bean name="ribaobiaoDao" class="com.chinasofti.daoImpl.RibaobiaoDaoImpl" >
+		<property name="sessionFactory"><ref bean="sessionFactory" /></property>
+	</bean>
+	<bean id="FeilvDao" class="com.chinasofti.daoImpl.FeilvDaoImpl" >
+		<property name="sessionFactory"><ref bean="sessionFactory" /></property>
+	</bean>
+	 <bean name="monthTicketDao" class="com.chinasofti.daoImpl.MonthTicketDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	 </bean>
+	<bean name="userDao" class="com.chinasofti.daoImpl.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	 </bean>
 	<!-- 核心事务管理器 -->
 	<bean name="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory"></property>

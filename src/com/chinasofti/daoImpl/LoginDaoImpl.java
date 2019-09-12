@@ -26,4 +26,15 @@ public class LoginDaoImpl extends BaseDaoImpl<TUser> implements LoginDao{
 		return null;
 	}
 
+	@Override
+	public TUser findByUsername(String username) {
+		DetachedCriteria dc = DetachedCriteria.forClass(TUser.class);
+		dc.add(Restrictions.eq("username", username));
+		List<TUser> list= (List<TUser>) getHibernateTemplate().findByCriteria(dc);
+		if (list!=null&&list.size()!=0&&list.get(0).getUsertoken()!=1) {
+			return list.get(0);
+		}
+		return null;
+	}
+
 }

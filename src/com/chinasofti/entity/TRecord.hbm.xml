@@ -40,16 +40,21 @@
                 <comment>类型</comment>
             </column>
         </property>
-         <property name="monthId" type="java.lang.Long">
+<!--         <property name="monthId" type="java.lang.Integer">
             <column name="month_id">
                 <comment>关联的月票ID</comment>
             </column>
-        </property> 
-<!--          <property name="userId" type="java.lang.Long">
+        </property> -->
+         <many-to-one name="monthId" class="com.chinasofti.entity.TCar" fetch="select" lazy="false">
+        	<column name="month_id" >
+        		<comment>关联的用户ID</comment>
+        	</column>
+        </many-to-one>     
+<!--         <property name="userId" type="java.lang.Long">
             <column name="user_id">
                 <comment>关联的用户ID</comment>
             </column>
-        </property>  -->
+        </property> -->
          <many-to-one name="userId" class="com.chinasofti.entity.TUser" fetch="select" lazy="false">
         	<column name="user_id" >
         		<comment>关联的用户ID</comment>

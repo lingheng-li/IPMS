@@ -1,7 +1,5 @@
 package com.chinasofti.entity;
 
-import java.sql.Timestamp;
-
 /**
  * TUser entity. @author MyEclipse Persistence Tools
  */
@@ -11,12 +9,13 @@ public class TUser implements java.io.Serializable {
 	// Fields
 
 	private Long id;
-	private Timestamp addtime;
-	private String password;
-	private Integer access;
-	private String truename;
-	private Integer usertoken;
 	private String username;
+	private String password;
+	private String truename;
+	private Integer access;
+	private Integer usertoken;
+	private String addtime;
+	private String phone;
 
 	// Constructors
 
@@ -31,14 +30,15 @@ public class TUser implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public TUser(Timestamp addtime, String password, Integer access,
-			String truename, Integer usertoken, String username) {
-		this.addtime = addtime;
-		this.password = password;
-		this.access = access;
-		this.truename = truename;
-		this.usertoken = usertoken;
+	public TUser(String username, String password, String truename,
+			Integer access, Integer usertoken, String addtime, String phone) {
 		this.username = username;
+		this.password = password;
+		this.truename = truename;
+		this.access = access;
+		this.usertoken = usertoken;
+		this.addtime = addtime;
+		this.phone = phone;
 	}
 
 	// Property accessors
@@ -51,12 +51,12 @@ public class TUser implements java.io.Serializable {
 		this.id = id;
 	}
 
-	public Timestamp getAddtime() {
-		return this.addtime;
+	public String getUsername() {
+		return this.username;
 	}
 
-	public void setAddtime(Timestamp addtime) {
-		this.addtime = addtime;
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 	public String getPassword() {
@@ -67,20 +67,20 @@ public class TUser implements java.io.Serializable {
 		this.password = password;
 	}
 
-	public Integer getAccess() {
-		return this.access;
-	}
-
-	public void setAccess(Integer access) {
-		this.access = access;
-	}
-
 	public String getTruename() {
 		return this.truename;
 	}
 
 	public void setTruename(String truename) {
 		this.truename = truename;
+	}
+
+	public Integer getAccess() {
+		return this.access;
+	}
+
+	public void setAccess(Integer access) {
+		this.access = access;
 	}
 
 	public Integer getUsertoken() {
@@ -91,12 +91,20 @@ public class TUser implements java.io.Serializable {
 		this.usertoken = usertoken;
 	}
 
-	public String getUsername() {
-		return this.username;
+	public String getAddtime() {
+		return this.addtime;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setAddtime(String addtime) {
+		this.addtime = addtime;
+	}
+
+	public String getPhone() {
+		return this.phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 }

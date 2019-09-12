@@ -59,6 +59,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						success:function (data){
 							if(data==1){
 								window.location.href="carin.jsp";
+							}else{
+								alert("用户不是月票用户，请办理");
+								window.location.href="../../page/monticket/mtms.jsp";
 							}
 						}
 					}); 

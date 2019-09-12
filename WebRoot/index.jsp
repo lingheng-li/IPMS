@@ -94,7 +94,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<li class="layui-nav-item" pc>
 						<a href="javascript:;">
 							<img src="images/face.jpg" class="layui-circle" width="35" height="35">
-							<cite><s:if test="#session.user!=null">${user.truename}</s:if><s:else>请登录</s:else></cite>
+							<cite><s:if test="#session.user!=null">${user.username}</s:if><s:else>请登录</s:else></cite>
 						</a>
 						<dl class="layui-nav-child">
 							<dd><a href="javascript:;" data-url="page/user/userInfo.jsp"><i class="iconfont icon-zhanghu" data-icon="icon-zhanghu"></i><cite>个人资料</cite></a></dd>

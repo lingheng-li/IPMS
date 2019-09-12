@@ -6,12 +6,12 @@
 },{
 	"title" : "月票管理",
 	"icon" : "icon-text",
-	"href" : "",
+	"href" : "page/monticket/mtms.jsp",
 	"spread" : false
 },{
 	"title" : "用户管理",
 	"icon" : "&#xe613;",
-	"href" : "page/user/allUsers.html",
+	"href" : "page/account/accont.jsp",
 	"spread" : false
 },{
 	"title" : "入口管理",
@@ -21,22 +21,17 @@
 },{
 	"title" : "费率设置",
 	"icon" : "&#xe659;",
-	"href" : "",
+	"href" : "FeilvAction_list",
 	"spread" : false
 },{
 	"title" : "收入统计",
 	"icon" : "icon-text",
-	"href" : "",
+	"href" : "RbbAction_listTicket",
 	"spread" : false
 },{
 	"title" : "停车记录",
 	"icon" : "&#xe60e;",
-	"href" : "",
-	"spread" : false
-},{
-	"title" : "文章列表",
-	"icon" : "icon-text",
-	"href" : "page/news/newsList.html",
+	"href" : "page/AdmiQuery/AdmiQuery.jsp",
 	"spread" : false
 },{
 	"title" : "友情链接",

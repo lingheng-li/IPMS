@@ -79,7 +79,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							if(access==1){
 								window.location.href="index.jsp";
 							}else if (access==0) {
-								window.location.href="index.jsp";
+								window.location.href="userindex.jsp";
 							}else{
 								window.location.href="login.jsp";
 							}
