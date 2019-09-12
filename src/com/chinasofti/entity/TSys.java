@@ -20,8 +20,7 @@ public class TSys implements java.io.Serializable {
 	}
 
 	/** full constructor */
-	public TSys(Integer parkingSpaces, Double dayIncome,
-			Integer freeprkingtime, Double monthticketFee) {
+	public TSys(Integer parkingSpaces, Double dayIncome, Double monthticketFee) {
 		this.parkingSpaces = parkingSpaces;
 		this.dayIncome = dayIncome;
 		this.monthticketFee = monthticketFee;

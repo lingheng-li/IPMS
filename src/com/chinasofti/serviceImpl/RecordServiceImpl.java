@@ -72,6 +72,13 @@ public class RecordServiceImpl implements RecordService{
 		recordDao.saveOrUpdate(record);
 	}
 	@Override
+	public void updateCar(TRecord record, String userId) {
+		Long id = Long.parseLong(userId);
+		TUser user =  loginDao.getByID(id);
+		record.setUserId(user);
+		recordDao.saveOrUpdate(record);
+	}
+	@Override
 	public void saveDayRecord(String time,String fee) {
 		TDailyincome tDailyincome= rd.findByTime(time);
 		Double money = Double.valueOf(fee);
@@ -88,11 +95,11 @@ public class RecordServiceImpl implements RecordService{
 	@Override
 	public PageBean getBeanPage(DetachedCriteria dc, Integer currentPage,
 			Integer pageSize, TUser user) {
-		//1.调用Dao查询总记录数
+		//1.璋冪敤Dao鏌ヨ鎬昏褰曟暟
 		Integer totalCount = recordDao.getTotalCount(dc);
-		//2.创建PageBean对象
+		//2.鍒涘缓PageBean瀵硅薄
 		PageBean pb = new PageBean(currentPage, totalCount, pageSize);
-		//3.调用Dao查询分页列表数据
+		//3.璋冪敤Dao鏌ヨ鍒嗛〉鍒楄〃鏁版嵁
 		List<TRecord> list = recordDao.getPageList(dc,pb.getStart(),pb.getPageSize());
 		List<TRecord> list2 = new ArrayList<>();
 		if(user.getAccess()==0){
@@ -104,7 +111,7 @@ public class RecordServiceImpl implements RecordService{
 		}else{
 			list2=list;
 		}
-		//4.列表数据放入pageBean中并返回
+		//4.鍒楄〃鏁版嵁鏀惧叆pageBean涓苟杩斿洖
 		if (list2!=null&&list2.size()!=0) {
 			pb.setList(list2);
 			return pb;

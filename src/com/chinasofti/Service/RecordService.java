@@ -15,4 +15,5 @@ public interface RecordService {
 	void saveDayRecord(String time, String fee);
 	PageBean getBeanPage(DetachedCriteria dc, Integer currentPage,
 			Integer pageSize,TUser user);
+	void updateCar(TRecord record, String userId);
 }

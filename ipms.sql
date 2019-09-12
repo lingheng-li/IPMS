@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50724
 File Encoding         : 65001
 
-Date: 2019-09-12 11:36:07
+Date: 2019-09-12 15:04:54
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -47,12 +47,15 @@ CREATE TABLE `t_dailyincome` (
   `time` varchar(255) DEFAULT NULL COMMENT '时间',
   `income` double NOT NULL COMMENT '收入',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of t_dailyincome
 -- ----------------------------
-INSERT INTO `t_dailyincome` VALUES ('1', '2019/09/11', '24');
+INSERT INTO `t_dailyincome` VALUES ('1', '2019/09/11', '240');
+INSERT INTO `t_dailyincome` VALUES ('2', '2019/09/10', '300');
+INSERT INTO `t_dailyincome` VALUES ('3', '2019/09/09', '256');
+INSERT INTO `t_dailyincome` VALUES ('4', '2019/09/12', '369.6726025');
 
 -- ----------------------------
 -- Table structure for `t_record`
@@ -69,7 +72,7 @@ CREATE TABLE `t_record` (
   `month_id` int(20) DEFAULT NULL COMMENT '关联的月票ID',
   `user_id` bigint(20) DEFAULT NULL COMMENT '关联的用户ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
 
 -- ----------------------------
 -- Records of t_record
@@ -80,6 +83,9 @@ INSERT INTO `t_record` VALUES ('3', '鄂AB6666', '2019-09-10 11:01:24', '81', '1
 INSERT INTO `t_record` VALUES ('4', '鄂AB8866', '2019-09-10 11:01:43', '96.0', '1', '2019-09-11 19:05:06', null, null, '4');
 INSERT INTO `t_record` VALUES ('6', '鄂BH586', '2019-09-11 11:34:59', '24.0', '1', '2019-09-11 19:38:07', null, null, '5');
 INSERT INTO `t_record` VALUES ('7', '鄂AUF901', '2019-09-10 19:06:34', '72.0', '1', '2019-09-11 19:33:00', null, null, '1');
+INSERT INTO `t_record` VALUES ('8', '鄂AF5666', '2019-09-11 14:04:14', '', '0', '2019-09-12 14:47:52', null, null, '5');
+INSERT INTO `t_record` VALUES ('9', '鄂A22222', '2019-09-11 14:04:55', null, '0', null, null, null, '4');
+INSERT INTO `t_record` VALUES ('10', '鄂AUF901', '2019-09-11 16:06:17', null, '0', null, null, null, '2');
 
 -- ----------------------------
 -- Table structure for `t_sys`
@@ -96,7 +102,7 @@ CREATE TABLE `t_sys` (
 -- ----------------------------
 -- Records of t_sys
 -- ----------------------------
-INSERT INTO `t_sys` VALUES ('1', '55', '3', '300');
+INSERT INTO `t_sys` VALUES ('1', '60', '3', '300');
 
 -- ----------------------------
 -- Table structure for `t_user`

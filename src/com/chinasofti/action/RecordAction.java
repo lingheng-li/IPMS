@@ -81,13 +81,15 @@ public class RecordAction extends ActionSupport{
 	public void CarInList() throws Exception{
 		HttpServletRequest req = ServletActionContext.getRequest();
 		HttpServletResponse resp = ServletActionContext.getResponse();
-		resp.setContentType("application/json;charset=utf-8");
-		TUser user=(TUser) req.getSession().getAttribute("user");
-		if(user==null){
+		TUser user = (TUser) req.getSession().getAttribute("user");
+		if(user!=null){
+			resp.setContentType("application/json;charset=utf-8");
+			List<TRecord> list =recordService.CarList();
+			resp.getWriter().write(JSONArray.fromObject(list).toString());
+		}else{
 			resp.getWriter().write(JSONObject.fromObject(user).toString());
 		}
-		List<TRecord> list =recordService.CarList();
-		resp.getWriter().write(JSONArray.fromObject(list).toString());
+
 	}
 	
 	//车辆离开
@@ -117,7 +119,7 @@ public class RecordAction extends ActionSupport{
 		tRecord.setFee(fee);
 		tRecord.setLeavetime(leavetime);
 		tRecord.setIsover(1);
-		recordService.saveCar(tRecord,userId);
+		recordService.updateCar(tRecord,userId);
 		TSys tSys = fs.findFeilv();
 		//增加车位
 		tSys.setParkingSpaces(tSys.getParkingSpaces()+1);

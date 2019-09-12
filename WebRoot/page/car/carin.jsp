@@ -52,16 +52,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					<th>用户姓名</th>
 					<th>操作</th>
 				</tr> 
-<%-- 				<tr>
-			    	<td><input type="checkbox" name="checked" lay-skin="primary" lay-filter="choose"></td>
-			    	<td>${user.username}</td>
-			    	<td>${user.access}</td>
-			    	<td>${user.truename}</td>
-			    	<td>
-					<a class="layui-btn layui-btn-mini users_edit"><i class="iconfont icon-edit"></i> 结算</a>
-					<a class="layui-btn layui-btn-danger layui-btn-mini users_del" data-id="data[i].usersId+"><i class="layui-icon">&#xe640;</i> 删除</a>
-			        </td>
-			    </tr> --%>
+
 		    </thead>
 		    <tbody class="users_content"></tbody>
 		</table>
